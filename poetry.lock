@@ -236,6 +236,14 @@ six = ">=1.9.0"
 wcwidth = "*"
 
 [[package]]
+name = "py-bcrypt"
+version = "0.4"
+description = "bcrypt password hashing and key derivation"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "pyasn1"
 version = "0.4.8"
 description = "ASN.1 types and codecs"
@@ -435,7 +443,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.9,<3.10"
-content-hash = "d2fc47254cc9f93d2967f613f910bedcad9053df304d5abe99d622ea93315757"
+content-hash = "6cbf5cd6511ae9475a89bf432ee7df6795a834e85bb9144b9c6bf6971733cbbc"
 
 [metadata.files]
 aiosqlite = [
@@ -603,6 +611,9 @@ prompt-toolkit = [
     {file = "prompt_toolkit-1.0.14-py2-none-any.whl", hash = "sha256:82c7f8e07d7a0411ff5367a5a8ff520f0112b9179f3e599ee8ad2ad9b943d911"},
     {file = "prompt_toolkit-1.0.14-py3-none-any.whl", hash = "sha256:7281b5199235adaef6980942840c43753e4ab20dfe41338da634fb41c194f9d8"},
     {file = "prompt_toolkit-1.0.14.tar.gz", hash = "sha256:cc66413b1b4b17021675d9f2d15d57e640b06ddfd99bb724c73484126d22622f"},
+]
+py-bcrypt = [
+    {file = "py-bcrypt-0.4.tar.gz", hash = "sha256:5fa13bce551468350d66c4883694850570f3da28d6866bb638ba44fe5eabda78"},
 ]
 pyasn1 = [
     {file = "pyasn1-0.4.8-py2.4.egg", hash = "sha256:fec3e9d8e36808a28efb59b489e4528c10ad0f480e57dcc32b4de5c9d8c9fdf3"},
