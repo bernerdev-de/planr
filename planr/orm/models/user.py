@@ -10,7 +10,7 @@ class User(Model):
     email = fields.CharField(max_length=255, unique=True, validators=[EmailValidator()])
     username = fields.CharField(max_length=50, unique=True)
     name = fields.CharField(max_length=50)
-    password = fields.TextField()
+    password = fields.CharField(max_length=60)
     is_admin = fields.BooleanField(default=False)
     created_at = fields.DatetimeField(auto_now_add=True)
     updated_at = fields.DatetimeField(auto_now=True)
