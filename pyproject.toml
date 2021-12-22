@@ -16,6 +16,8 @@ fastapi = "^0.70.1"
 tortoise-orm = {extras = ["asyncpg"], version = "^0.18.0"}
 uvicorn = {extras = ["standart"], version = "^0.16.0"}
 PyInquirer = "^1.0.3"
+bcrypt = "^3.2.0"
+python-dotenv = "^0.19.2"
 
 [tool.poetry.dev-dependencies]
 black = {version = "^21.12b0", allow-prereleases = true}

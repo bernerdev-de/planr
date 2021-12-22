@@ -1,12 +1,14 @@
 from planr.orm import init
 from planr.orm.models import User
-from planr.utils.functions import generate_password
+from planr.utils.functions import generate_hash
 import os
 from PyInquirer import prompt
 import asyncio
 import re
 import logging
 import tortoise
+from dotenv import load_dotenv
+load_dotenv()
 
 email_regex = r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)"
 
@@ -29,11 +31,12 @@ class Database:
             demo_user = await User.filter(email="demo@demo.demo").first()
             if demo_user:
                 raise tortoise.exceptions.IntegrityError
+            password = generate_hash("demo")
             demo = User(
                 email="demo@demo.demo",
                 username="demo",
                 name="Demo",
-                password="demo",
+                password=password,
                 is_admin=True,
             )
             await demo.save()
@@ -80,11 +83,12 @@ class Database:
             },
         ]
         answers = prompt(questions)
+        password = generate_hash(answers["password"])
         user = User(
             name=answers["name"],
             username=answers["username"],
             email=answers["email"],
-            password=answers["password"],
+            password=password,
             is_admin=answers["admin"],
         )
         await user.save()
